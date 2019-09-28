@@ -1,18 +1,19 @@
-class Quicksorter {
+class Quicksorter{
 
   /**
    * Sorts a list of ints
    */
-  static List sort(List<int> list){
+  static List sort<T extends Comparable>(List<T> list){
     if (list.length <= 1) return list;
 
-    final int pivot = Quicksorter.getMedian(list);
-    final List<int> left = List<int>();
-    final List<int> right = List<int>();
+    final T pivot = Quicksorter.getMedian(list);
+    final List<T> left = List<T>();
+    final List<T> right = List<T>();
 
-    for(int member in list){
-      if(member<pivot)left.add(member);
-      if(member>pivot)right.add(member);
+    for(T member in list){
+
+      if(member.compareTo(pivot)<0)left.add(member);
+      if(member.compareTo(pivot)>0)right.add(member);
     }
 
     return [...Quicksorter.sort(left),pivot,...Quicksorter.sort(right)];
@@ -21,8 +22,11 @@ class Quicksorter {
   /**
    * Gets the median of the list
    */
-  static int getMedian(List<int>list ){
-    return list[list.length~/2];
+  static T getMedian<T extends Comparable>(List<T>list ){
+    T center = list[list.length~/2];
+    T middle = list[list.length~/2];
+    T last = list[list.length~/2];
+    return last;
   }
 
 }
