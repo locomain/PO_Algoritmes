@@ -16,7 +16,7 @@ class Quicksorter{
       if(member.compareTo(pivot)>0)right.add(member);
     }
 
-    return [...Quicksorter.sort(left),pivot,...Quicksorter.sort(right)];
+    return [...Quicksorter.sort(left),...Quicksorter.sort(right)];
   }
 
   /**
