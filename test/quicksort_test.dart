@@ -20,6 +20,14 @@ void main(){
     expect(sorter.sort(['a','2','c','true']),['2','a','c','true']);
   });
 
+  test('Should sort with empty array',(){
+    expect(sorter.sort([]),[]);
+  });
+
+  test('Should sort with only one value',(){
+    expect(sorter.sort([1]),[1]);
+  });
+
   test('Should get the median of a numeric list',(){
     var list = [1,2,3,4,5];
     expect(list[sorter.getMedianIndex(list)],3);
