@@ -4,6 +4,7 @@ class Quicksorter<T extends Comparable>{
    * Sorts a list of ints
    */
   List<T> sort(List<T> list){
+    if(list==null) return [];
     if (list.length <= 1) return list;
 
     final int pivotIndex = getMedianIndex(list);

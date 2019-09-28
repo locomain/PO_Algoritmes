@@ -28,6 +28,10 @@ void main(){
     expect(sorter.sort([1]),[1]);
   });
 
+  test('Should sort with null value',(){
+    expect(sorter.sort(null),[]);
+  });
+
   test('Should get the median of a numeric list',(){
     var list = [1,2,3,4,5];
     expect(list[sorter.getMedianIndex(list)],3);
