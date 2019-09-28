@@ -12,7 +12,7 @@ class Quicksorter{
 
     for(T member in list){
 
-      if(member.compareTo(pivot)<0)left.add(member);
+      if(member.compareTo(pivot)<=0)left.add(member);
       if(member.compareTo(pivot)>0)right.add(member);
     }
 
