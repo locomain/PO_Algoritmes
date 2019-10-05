@@ -35,13 +35,15 @@ class PathFinder {
     HashMap<String,Vert> visited = new HashMap<String,Vert>();
     HashMap<String, Vert> evaluated = new HashMap<String,Vert>();
 
+    start.cost = 0;
     queue.add(start);
     evaluated[start.identifier] = start;
 
     while(!queue.isEmpty){
+      print("iteration");
       Vert current = queue.removeFirst();
 
-      if(current.identifier == target.identifier) return getPath(current,target,[current]);
+      if(current.identifier == target.identifier) return getPath(start,current,[current]);
       visited[current.identifier] = current; // Add current node to visited map
 
       for(Edge edge in current.relations){
@@ -49,16 +51,20 @@ class PathFinder {
 
         if(visited.containsKey(neighbour.identifier)) continue; //already visited
 
-        double totalcost = current.cost + edge.cost;
+        double cost = current.cost + edge.cost;
+        print("From "+current.identifier+" to "+neighbour.identifier+" costs "+cost.toString());
 
         if(!evaluated.containsKey(neighbour.identifier)){
+          neighbour.parent = current;
           evaluated[neighbour.identifier] = neighbour;
           queue.add(neighbour);
           continue;
         }
-
-        if(evaluated[neighbour.identifier].cost > totalcost){
-          evaluated[neighbour.identifier].cost = totalcost;
+        print("here");
+        print(evaluated[neighbour.identifier].cost.toString()+" > "+cost.toString());
+        if(evaluated[neighbour.identifier].cost > cost){
+          evaluated[neighbour.identifier].cost = cost;
+          print("Setting parent "+current.identifier+" for "+evaluated[neighbour.identifier].identifier);
           evaluated[neighbour.identifier].parent = current;
           queue.remove(evaluated[neighbour.identifier]);
           queue.add(evaluated[neighbour.identifier]);
@@ -66,12 +72,15 @@ class PathFinder {
       }
     }
 
-    return []; //TODO
+    throw Exception('Could not find a path from start to target');
   }
 
 
   List<Vert> getPath(Vert start, Vert current, List<Vert> path){
     if(start.identifier == current.identifier) return path;
+    if(current.parent==null){
+      print("parent unknown for "+current.identifier);
+    }
     path.insert(0, current.parent);
     return getPath(start, current.parent, path);
   }

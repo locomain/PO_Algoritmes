@@ -20,7 +20,7 @@ class Graph {
 
   addTwoWayEdge(Vert from, Vert to, double cost){
     addEdge(from, to, cost).addEgde(to,from,cost);
-  }
+  } // TODO do we need this?
 
   getVertext(String identifier){
     return vertices[identifier];

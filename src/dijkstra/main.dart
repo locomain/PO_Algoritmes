@@ -12,10 +12,11 @@ void main(){
 			.addVertex(arnhem)
 			.addVertex(doetinchem)
 			.addVertex(zutphen)
-			.addEdge(arnhem,doetinchem,10.0)
-			.addEdge(arnhem,zutphen,8.0);
+			.addEdge(arnhem,doetinchem,30.0)
+			.addEdge(arnhem,zutphen,8.0)
+			.addEdge(zutphen,doetinchem,2.0);
 
 	PathFinder finder = new PathFinder(graph);
-	print(finder.getShortestPathFromVertices(arnhem, zutphen).map((vert)=>vert.identifier));
+	print(finder.getShortestPathFromVertices(arnhem, doetinchem).map((vert)=>vert.identifier));
 	print("oke");
 }
