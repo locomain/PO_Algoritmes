@@ -6,22 +6,27 @@ class Graph {
 
   HashMap<String,Vert> vertices = new HashMap<String,Vert>();
 
+  /**
+   * Adds a vertex to the graph
+   */
   addVertex(Vert vertex){
     if(getVertext(vertex.identifier)==null)
       vertices[vertex.identifier] = vertex;
     return this;
   }
 
-  addEdge(Vert from, Vert to, double cost){
+  /**
+   * Adds a edge to the graph and links it in the vertex
+   */
+  addEdge(Vert from, Vert to, [double cost = 0]){
     addVertex(from).addVertex(to); //to make sure the vertices are added to the graph
     from.relations.add(new Edge(to,cost));
     return this;
   }
 
-  addTwoWayEdge(Vert from, Vert to, double cost){
-    addEdge(from, to, cost).addEgde(to,from,cost);
-  } // TODO do we need this?
-
+  /**
+   * Gets a vertex
+   */
   getVertext(String identifier){
     return vertices[identifier];
   }

@@ -1,4 +1,4 @@
-import "../src/quicksort/quicksorter.dart";
+import "../../src/quicksort/quicksorter.dart";
 import "package:test/test.dart";
 
 void main(){

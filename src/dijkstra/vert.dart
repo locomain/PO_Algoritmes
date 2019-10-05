@@ -7,15 +7,15 @@ class Vert implements Comparable<Vert>{
 
   double cost = double.infinity;
   Vert parent;
-  //Vert relation;
 
   /**
    * Default constructor
    */
   Vert(this.identifier);
-  //Vert(this.identifier,this.cost,this.relation);
 
-
+  /**
+   * Adds a (Edge) relation
+   */
   addRelation(Vert vertex, cost){
     relations.add(new Edge(vertex,cost));
   }
