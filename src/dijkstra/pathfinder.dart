@@ -56,6 +56,7 @@ class PathFinder {
 
         if(!evaluated.containsKey(neighbour.identifier)){
           neighbour.parent = current;
+          neighbour.cost = cost;
           evaluated[neighbour.identifier] = neighbour;
           queue.add(neighbour);
           continue;

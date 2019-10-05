@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c94b9e2e-07df-4418-a371-5ce90e0efaf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dijkstra/edge.dart" beforeDir="false" afterPath="$PROJECT_DIR$/src/dijkstra/edge.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dijkstra/graph.dart" beforeDir="false" afterPath="$PROJECT_DIR$/src/dijkstra/graph.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dijkstra/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/src/dijkstra/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dijkstra/pathfinder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/src/dijkstra/pathfinder.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dijkstra/pathfinder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -59,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dijkstra/vert.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -116,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/dijkstra/main.dart" />
         <option value="$PROJECT_DIR$/src/dijkstra/graph.dart" />
         <option value="$PROJECT_DIR$/src/dijkstra/edge.dart" />
-        <option value="$PROJECT_DIR$/src/dijkstra/pathfinder.dart" />
         <option value="$PROJECT_DIR$/src/dijkstra/vert.dart" />
+        <option value="$PROJECT_DIR$/src/dijkstra/pathfinder.dart" />
       </list>
     </option>
   </component>
@@ -217,12 +214,12 @@
       <updated>1569671552814</updated>
       <workItem from="1569671553923" duration="10653000" />
       <workItem from="1570272607932" duration="2989000" />
-      <workItem from="1570275804729" duration="9693000" />
+      <workItem from="1570275804729" duration="9764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23335000" />
+    <option name="totallyTimeSpent" value="23406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -352,13 +349,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dijkstra/pathfinder.dart">
+    <entry file="file://$PROJECT_DIR$/src/dijkstra/graph.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+        <state relative-caret-position="374">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dijkstra/vert.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -372,20 +376,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dijkstra/graph.dart">
+    <entry file="file://$PROJECT_DIR$/src/dijkstra/pathfinder.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="425">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dijkstra/vert.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
