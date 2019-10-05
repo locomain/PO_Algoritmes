@@ -1,0 +1,1 @@
+cd ../ && pub run test test/bintree/bintree_test.dart && cd scripts

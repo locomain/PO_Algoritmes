@@ -1,0 +1,1 @@
+run-quicksort-test && run-dijkstra-test && bintree-test

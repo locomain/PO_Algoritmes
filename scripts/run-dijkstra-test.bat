@@ -1,0 +1,1 @@
+cd ../ && pub run test test/dijkstra/dijkstra_test.dart && cd scripts
