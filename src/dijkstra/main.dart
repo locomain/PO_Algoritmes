@@ -25,7 +25,7 @@ void runWeighted(){
 			.addEdge(zutphen,doetinchem,2.0);
 
 	PathFinder pathFinder = new PathFinder(graph);
-	print(pathFinder.getShortestPathFromVertices(arnhem, doetinchem).map((vert)=>vert.identifier));
+	print(pathFinder.getShortestPathFromVertices(arnhem, doetinchem).getHumanReadable());
 }
 
 
@@ -45,5 +45,5 @@ void runUnweighted(){
 
 	PathFinder pathFinder = new PathFinder(graph);
 
-	print(pathFinder.getShortestPathFromVertices(arnhem, doetinchem).map((vert)=>vert.identifier));
+	print(pathFinder.getShortestPathFromVertices(arnhem, doetinchem).getHumanReadable());
 }

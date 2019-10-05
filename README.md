@@ -1,4 +1,4 @@
-Run batchfiles to execute asked implementations
+Run batchfiles in the scripts folder to execute asked implementations
 
 - run-quicksort.bat runs:
     - numeric sort on 9,8,7,6,5,4,3,2,1,0,0

@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'dart:collection';
 import 'edge.dart';
 import 'graph.dart';
+import 'path.dart';
 import 'vert.dart';
 
 class PathFinder {
@@ -33,7 +34,7 @@ class PathFinder {
   /**
    * Gets the shortest path by vertices
    */
-  List<Vert> getShortestPathFromVertices(Vert start, Vert target){
+  Path getShortestPathFromVertices(Vert start, Vert target){
     clearAllCollections();
     evaluateAndEnqueueWithCost(start);
 
@@ -94,8 +95,8 @@ class PathFinder {
   /**
    * Get a path based on a vert link
    */
-  List<Vert> getPath(Vert start, Vert current, List<Vert> path){ //TODO path
-    if(start.identifier == current.identifier) return path;
+  Path getPath(Vert start, Vert current, List<Vert> path){ //TODO path
+    if(start.identifier == current.identifier) return new Path(path);
     if(current.parent==null){
       print("parent unknown for "+current.identifier);
     }
