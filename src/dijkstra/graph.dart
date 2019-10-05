@@ -2,9 +2,9 @@ import 'dart:collection';
 import 'edge.dart';
 import 'vert.dart';
 
-class Graph {
+class Graph<T extends Comparable> {
 
-  HashMap<String,Vert> vertices = new HashMap<String,Vert>();
+  HashMap<T,Vert> vertices = new HashMap<T,Vert>();
 
   /**
    * Adds a vertex to the graph

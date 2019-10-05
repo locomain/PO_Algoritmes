@@ -1,8 +1,8 @@
 import 'edge.dart';
 
-class Vert implements Comparable<Vert>{
+class Vert<E extends Comparable> implements Comparable<Vert>{
 
-  String identifier;
+  E identifier;
   List<Edge> relations = new List<Edge>();
 
   double cost = double.infinity;
