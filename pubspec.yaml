@@ -1,5 +1,8 @@
 name: poalgoritmes
 description: PO Algoritmes
 
+dependencies:
+  collection: ^1.14.12
+
 dev_dependencies:
   test: ^1.8.0
