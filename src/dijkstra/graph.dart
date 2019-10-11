@@ -10,7 +10,7 @@ class Graph<T extends Comparable> {
    * Adds a vertex to the graph
    */
   addVertex(Vert vertex){
-    if(getVertext(vertex.identifier)==null)
+    if(getVertex(vertex.identifier)==null)
       vertices[vertex.identifier] = vertex;
     return this;
   }
@@ -27,7 +27,7 @@ class Graph<T extends Comparable> {
   /**
    * Gets a vertex
    */
-  getVertext(String identifier){
+  getVertex(String identifier){
     return vertices[identifier];
   }
 

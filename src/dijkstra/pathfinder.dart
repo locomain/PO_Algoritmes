@@ -5,7 +5,7 @@ import 'graph.dart';
 import 'path.dart';
 import 'vert.dart';
 
-class PathFinder {
+class PathFinder<T extends Comparable> {
 
   Graph graph;
   HeapPriorityQueue<Vert> queue = new HeapPriorityQueue<Vert>();
@@ -22,8 +22,8 @@ class PathFinder {
    * Gets the shortest path by identifiers
    */
   List<Vert> getShortestPath(String start, String target){
-    Vert from = graph.getVertext(start);
-    Vert to = graph.getVertext(target);
+    Vert from = graph.getVertex(start);
+    Vert to = graph.getVertex(target);
 
     if(from == null) throw Exception("Start vertex not found");
     if(to == null) throw Exception("Target vertex not found");
