@@ -23,13 +23,13 @@ class BinaryTree<T extends Comparable> {
    * Deletes a node from the tree
    */
   Node<T> _deleteNode(Node<T> node){
-    if(!node.hasChilds()){
+    if(!node.hasChilds()){ // no childs
       node = null;
       return node;
     } else { //all childs
       Node lowestRight = findMin(node.right);
       node.value = lowestRight.value;
-      node.right = _deleteNode(_search(lowestRight.value, root.right));//_deleteNode(lowestRight.value,root.right);
+      node.right = _deleteNode(_search(lowestRight.value, root.right));
     }
 
     //left only
