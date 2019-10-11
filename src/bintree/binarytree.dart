@@ -12,6 +12,9 @@ class BinaryTree<T extends Comparable> {
   }
 
 
+  /**
+   * Removes a value from the tree
+   */
   remove(T value){
     _checkRoot();
     Node target = _search(value,root);
@@ -65,7 +68,7 @@ class BinaryTree<T extends Comparable> {
       parent = root;
     }
     if(parent.left!=null){
-      return findMin(parent);
+      return findMin(parent.left);
     } else return parent;
   }
 
@@ -78,7 +81,7 @@ class BinaryTree<T extends Comparable> {
         parent = root;
       }
       if(parent.right!=null){
-        return findMax(parent);
+        return findMax(parent.right);
       } else return parent;
   }
 
@@ -105,44 +108,6 @@ class BinaryTree<T extends Comparable> {
     }
   }
 
-/*  Node<T> _removeNode(T value,[Node<T> parent = null]){
-    if(parent==null)return null;
-
-    final int comparableValue = value.compareTo(parent.value);
-
-    if(comparableValue==0) { //found the node
-
-        //no childs
-      if(!parent.hasChilds()){
-        Node<T> copy = new Node(parent.value);
-        parent = null;
-        return copy;
-      } else { //all childs
-        Node lowestRight = findMin(parent.right);
-        parent.value = lowestRight.value;
-        parent.right = _removeNode(lowestRight.value,root.right);
-      }
-
-      //left only
-      if(parent.left!=null){
-        parent = parent.left;
-      }
-
-      //right only
-      if(parent.right!=null){
-        parent = parent.right;
-      }
-
-    } else if(comparableValue<0){
-      return _removeNode(value,parent.left);
-    } else {
-      return _removeNode(value,parent.right);
-    }
-
-
-    return parent;
-  }*/
-
   /**
    * Searches a node
    */
@@ -152,9 +117,9 @@ class BinaryTree<T extends Comparable> {
 
     if(comparableValue==0)return parent;
     if(comparableValue<0){
-      return this.find(value,parent.left);
+      return _search(value,parent.left);
     } else {
-      return this.find(value,parent.right);
+      return _search(value,parent.right);
     }
   }
   
