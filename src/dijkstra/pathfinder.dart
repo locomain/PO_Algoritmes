@@ -66,7 +66,6 @@ class PathFinder {
       }
 
       if(neighbour.cost > cost){
-        //queue.remove(neighbour); //TODO do we need this?
         neighbour.parent = current;
         evaluateAndEnqueueWithCost(neighbour,cost);
       }
