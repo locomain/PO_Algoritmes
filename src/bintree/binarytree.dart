@@ -17,35 +17,50 @@ class BinaryTree<T extends Comparable> {
    */
   remove(T value){
     _checkRoot();
-    Node target = _search(value,root);
-    _deleteNode(target);
+    Node parent = searchForParent(value, root);
+    if(parent==null) return;
+    Node target = _search(value, parent);
+    if(target==null) return;
+    _deleteNode(target,parent);
   }
 
 
   /**
    * Deletes a node from the tree
    */
-  Node<T> _deleteNode(Node<T> node){
-    if(!node.hasChilds()){ // no childs
-      node = null;
+  Node<T> _deleteNode(Node node, Node parent){
+    if(node.hasAllChilds()){ // has all childs
+      Node lOLeft = node.left;
+      Node lORight = node.right;
+      Node lowestRight = findMin(lORight);
+      Node lowestRightParent = searchForParent(lowestRight.value,lORight);
+
+      _overrideChild(node, lowestRight, parent);
+      lowestRightParent.right = null;//we just rotated the node up the tree so we remove the duplicate value
+      _insertNode(lOLeft,lowestRight); //reinsert left side of deleted node
+      _insertNode(lORight,lowestRight); //reinsert right side of deleted node
       return node;
-    } else { //all childs
-      Node lowestRight = findMin(node.right);
-      node.value = lowestRight.value;
-      node.right = _deleteNode(_search(lowestRight.value, root.right));
     }
 
-    //left only
-    if(node.left!=null){
-      node = node.left;
+    if(node.left!=null){//has left child only
+      _overrideChild(node,node.left,parent);
+    } else if(node.right!=null){ //has right child only
+      _overrideChild(node,node.right,parent);
+    } else { //no childs
+      _overrideChild(node,null,parent);
     }
-
-    //right only
-    if(node.right!=null){
-      node = node.right;
-    }
-
     return node;
+  }
+
+  /**
+   * Overrides a child of a parent with a given target
+   */
+  _overrideChild(Node target, Node replacer, Node parent){
+    if(parent.right == target){
+      parent.right = replacer;
+    } else if(parent.left == target){
+      parent.left = replacer;
+    }
   }
 
   /**
@@ -122,7 +137,29 @@ class BinaryTree<T extends Comparable> {
       return _search(value,parent.right);
     }
   }
-  
+
+  /**
+   * Searches for a parent of a node by value
+   */
+  Node<T> searchForParent(T value, Node parent){
+    if(parent==null)return null;
+    if(parent.left!=null){
+      if(parent.left.value.compareTo(value) == 0)
+        return parent;
+    }
+    if (parent.right!=null){
+      if(parent.right.value.compareTo(value) == 0)
+        return parent;
+    }
+    //not found search on
+    final int comparableValue = value.compareTo(parent.value);
+    if(comparableValue==0)return parent;
+    if(comparableValue<0){
+      return searchForParent(value,parent.left);
+    } else {
+      return searchForParent(value,parent.right);
+    }
+  }
 
   /**
    * Determines if the tree has a root

@@ -5,7 +5,7 @@ class Node<T extends Comparable> {
 
   Node(T this.value);
 
-  bool hasChilds(){
+  bool hasAllChilds(){
     return left!=null && right!=null;
   }
 }
