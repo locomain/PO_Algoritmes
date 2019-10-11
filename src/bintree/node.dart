@@ -4,4 +4,8 @@ class Node<T extends Comparable> {
   T value;
 
   Node(T value);
+
+  bool hasChilds(){
+    return left!=null && right!=null;
+  }
 }
