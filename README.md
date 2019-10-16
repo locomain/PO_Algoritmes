@@ -1,21 +1,3 @@
-Run batchfiles in the scripts folder to execute asked implementations
-
-- run-quicksort.bat runs:
-    - numeric sort on 9,8,7,6,5,4,3,2,1,0,0
-    
-    
-- run-dijkstra.bat runs:
-    - unweighted pathfinding
-        - Arnhem->Doetinchem
-        - Arnhem->Zutphen
-        - Zuthpen->Doetinchem
-    - weighted pathfinding
-        - Arnhem->Doetinchem(30)
-        - Arnhem->Zutphen(8)
-        - Zuthpen->Doetinchem(2)
-        
-        
-- run-tests.bat runs:
-    - unittests for all packages
-    
-    
+# PO_Algoritmes
+[![Build Status](https://travis-ci.com/locomain/PO_Algoritmes.svg?branch=master)](https://travis-ci.com/locomain/PO_Algoritmes
+)
