@@ -15,7 +15,10 @@ class PathFinder<T extends Comparable> {
   /**
    * Default constructor
    */
-  PathFinder(this.graph);
+  PathFinder(graph){
+    if(graph==null)throw Exception("graph cannot be null");
+    this.graph = graph;
+  }
 
 
   /**
@@ -35,6 +38,7 @@ class PathFinder<T extends Comparable> {
    * Gets the shortest path by vertices
    */
   Path getShortestPathFromVertices(Vert start, Vert target){
+    if(start == null || target == null) throw Exception("start or target vertex cannot be null");
     clearAllCollections();
     evaluateAndEnqueueWithCost(start);
 
